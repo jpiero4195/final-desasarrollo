@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "b4b6268f-7a35-4f68-8f0b-534749bfa4bf",
+		"name": "Desarrollo examen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37113097"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"jp@hotmail.com\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4195/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"jp@hotmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4195/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cursos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGMzMGFlZmQyNDExZTM3ZjQxYjIyMiIsImVtYWlsIjoianBAaG90bWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQwMTk4MzgsImV4cCI6MTc1NDAyMzQzOH0.zE2qmW436FdwiIo0rm5ufjVNrhCv07zPqFiwG6jA7Z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4195/api/curso/cursos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"curso",
+						"cursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Curso",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGMzMGFlZmQyNDExZTM3ZjQxYjIyMiIsImVtYWlsIjoianBAaG90bWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQwMTk4MzgsImV4cCI6MTc1NDAyMzQzOH0.zE2qmW436FdwiIo0rm5ufjVNrhCv07zPqFiwG6jA7Z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCurso\":\"1A\",\r\n    \"descripcion\":\"Curso de 1\",\r\n    \"duracionHoras\":\"25\",\r\n    \"nombreDocente\":\"Jean\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4195/api/curso/cursos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"curso",
+						"cursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Estudiante por id de Curso",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGMzMGFlZmQyNDExZTM3ZjQxYjIyMiIsImVtYWlsIjoianBAaG90bWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQwMTk4MzgsImV4cCI6MTc1NDAyMzQzOH0.zE2qmW436FdwiIo0rm5ufjVNrhCv07zPqFiwG6jA7Z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4195/api/curso/cursos/688c3bd695febad7447ad4f2/estudiantes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"curso",
+						"cursos",
+						"688c3bd695febad7447ad4f2",
+						"estudiantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar estudiante por Curso id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGMzMGFlZmQyNDExZTM3ZjQxYjIyMiIsImVtYWlsIjoianBAaG90bWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQwMTk4MzgsImV4cCI6MTc1NDAyMzQzOH0.zE2qmW436FdwiIo0rm5ufjVNrhCv07zPqFiwG6jA7Z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apellidos\":\"Sánchez\",\r\n    \"nombres\":\"Carlos\",\r\n    \"email\":\"jp@hotmail.com\",\r\n    \"nota_final\":\"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4195/api/curso/cursos/688c3bd695febad7447ad4f2/estudiantes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"curso",
+						"cursos",
+						"688c3bd695febad7447ad4f2",
+						"estudiantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Estudiante de un curso por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGMzMGFlZmQyNDExZTM3ZjQxYjIyMiIsImVtYWlsIjoianBAaG90bWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQwMTk4MzgsImV4cCI6MTc1NDAyMzQzOH0.zE2qmW436FdwiIo0rm5ufjVNrhCv07zPqFiwG6jA7Z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4195/api/curso/cursos/688c3bd695febad7447ad4f2/estudiantes/688c3e4aec9734565ce297bf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"curso",
+						"cursos",
+						"688c3bd695febad7447ad4f2",
+						"estudiantes",
+						"688c3e4aec9734565ce297bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Curso",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGMzMGFlZmQyNDExZTM3ZjQxYjIyMiIsImVtYWlsIjoianBAaG90bWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQwMTk4MzgsImV4cCI6MTc1NDAyMzQzOH0.zE2qmW436FdwiIo0rm5ufjVNrhCv07zPqFiwG6jA7Z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombreCurso\": \"1A\",\r\n        \"descripcion\": \"Curso de 2\",\r\n        \"duracionHoras\": 50,\r\n        \"nombreDocente\": \"Jean\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4195/api/curso/cursos/688c3bd695febad7447ad4f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"curso",
+						"cursos",
+						"688c3bd695febad7447ad4f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Estudiante por Curso",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGMzMGFlZmQyNDExZTM3ZjQxYjIyMiIsImVtYWlsIjoianBAaG90bWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQwMTk4MzgsImV4cCI6MTc1NDAyMzQzOH0.zE2qmW436FdwiIo0rm5ufjVNrhCv07zPqFiwG6jA7Z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"apellidos\": \"Jean\",\r\n        \"nombres\": \"Valencia\",\r\n        \"email\": \"jp@hotmail.com\",\r\n        \"nota_final\": 8\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4195/api/curso/cursos/688c3bd695febad7447ad4f2/estudiantes/688c3e29ec9734565ce297bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4195",
+					"path": [
+						"api",
+						"curso",
+						"cursos",
+						"688c3bd695febad7447ad4f2",
+						"estudiantes",
+						"688c3e29ec9734565ce297bb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
