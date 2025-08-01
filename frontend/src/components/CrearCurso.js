@@ -36,7 +36,7 @@ function CrearCurso({ onCursoCreado }) {
     }
 
     try {
-      await api.post('/cursos', {
+      await api.post('/curso/cursos', {
         ...formData,
         duracionHoras: Number(formData.duracionHoras)
       });
@@ -44,7 +44,7 @@ function CrearCurso({ onCursoCreado }) {
       setFormData({ nombreCurso: '', descripcion: '', duracionHoras: '', nombreDocente: '' });
       onCursoCreado(); // avisar para recargar lista
     } catch (error) {
-      setMensaje('Error al crear el curso');
+      setMensaje('Error al crear el curso '+ error.message);
     }
   };
 
